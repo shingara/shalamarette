@@ -71,14 +71,7 @@ end
 # an ORM plugin.  Install one, and uncomment one of the following lines,
 # if you need a database.
 
-# Uncomment for DataMapper ORM
-# use_orm :datamapper
-
-# Uncomment for ActiveRecord ORM
-# use_orm :activerecord
-
-# Uncomment for Sequel ORM
-# use_orm :sequel
+use_orm :datamapper
 
 
 #
@@ -93,8 +86,7 @@ end
 # merb_rspec is installed by default if you did gem install
 # merb.
 #
-# use_test :test_unit
-# use_test :rspec
+use_test :rspec
 
 
 #
