@@ -1,0 +1,6 @@
+%h1 Création d'un voyage
+
+- form_for @voyage, :action => url(:admin_voyage) do |v|
+  =text_control :title, :label => 'Titre :'
+  %br
+  =submit_button 'Create'

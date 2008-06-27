@@ -6,5 +6,14 @@ class Voyages < Application
     display @voyages
   end
   
+  def new
+    @voyage = Voyage.new
+    display @voyage
+  end
+
+  def create
+    Voyage.create params[:voyage]
+    redirect url(:action => 'index')
+  end
 end
 end # Admin

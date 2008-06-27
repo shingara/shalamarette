@@ -1,8 +1,15 @@
-%h1 Liste des Voyages enregistré
+%h1 Liste des Voyages enregistrés
 
-%table
-  %tr
-  - for voyage in @voyages
+- if @voyages.empty?
+  %p Il n'y a pas de voyage enregistré actuellement
+
+- else
+  %table
     %tr
-      %td= link_to 'Show', url(:voyage, voyage)
+      %td Titre
+    - @voyages.each do |voyage|
+      %tr
+        %td= voyage.title
+        %td= link_to 'Show', url(:admin_voyage, voyage)
 
+= link_to('ajouter un voyage', url(:new_admin_voyage))
