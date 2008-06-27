@@ -57,10 +57,12 @@ Gem.path.unshift(Merb.root / "gems")
 # dependency "RedCloth", "> 3.0"
 # OR
 # dependencies "RedCloth" => "> 3.0", "ruby-aes-cext" => "= 1.0"
+dependencies "merb-haml"
 Merb::BootLoader.after_app_loads do
   # Add dependencies here that must load after the application loads:
 
   # dependency "magic_admin" # this gem uses the app's model classes
+  DataObjects::Sqlite3.logger = DataObjects::Logger.new(STDOUT, :debug) 
 end
 
 #
@@ -110,7 +112,7 @@ end
 #
 # Here we define erratum/errata exception case:
 #
-# Language::English::Inflector.word "erratum", "errata"
+Language::English::Inflect.word "voyage", "voyages"
 #
 # In case singular and plural forms are the same omit
 # second argument on call:

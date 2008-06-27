@@ -1,0 +1,14 @@
+<h1>Voyageses controller, index action</h1>
+
+<p>Edit this file in <tt>app/views/voyages/index.html.erb</tt></p>
+
+<table>
+  <tr>
+  </tr>
+
+<% for voyage in @voyages %>
+  <tr>
+    <td><%= link_to 'Show', url(:voyage, voyage) %></td>
+  </tr>
+<% end %>
+</table>
