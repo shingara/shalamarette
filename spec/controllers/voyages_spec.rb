@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), "..", 'spec_helper.rb')
 
-describe Voyageses, "index action" do
+describe Voyages, "index action" do
   before(:each) do
-    dispatch_to(Voyageses, :index)
+    dispatch_to(Voyages, :index)
   end
 end

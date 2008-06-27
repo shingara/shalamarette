@@ -1,0 +1,8 @@
+%h1 Liste des Voyages enregistré
+
+%table
+  %tr
+  - for voyage in @voyages
+    %tr
+      %td= link_to 'Show', url(:voyage, voyage)
+
