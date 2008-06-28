@@ -27,6 +27,7 @@ Merb::Router.prepare do |r|
   
   # Change this for your home page to be available at /
   r.match('/').to(:controller => 'index', :action =>'index')
+  r.match('/admin').to(:controller => 'admin/voyages', :action => 'index')
 
   r.match('/admin').to(:namespace => 'admin') do |admin|
     admin.resources :voyages

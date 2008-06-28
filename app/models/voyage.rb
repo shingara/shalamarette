@@ -5,5 +5,7 @@ class Voyage
   property :title, String
   
   has n, :jours
+
+  validates_present :title
   
 end

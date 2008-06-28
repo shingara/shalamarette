@@ -42,6 +42,15 @@ Gem.path.unshift(Merb.root / "gems")
 # Merb.push_path(:lib, Merb.root / "lib") # uses **/*.rb as path glob.
 
 
+#
+# ==== Set up your ORM of choice
+#
+
+# Merb doesn't come with database support by default.  You need
+# an ORM plugin.  Install one, and uncomment one of the following lines,
+# if you need a database.
+
+use_orm :datamapper
 
 
 # ==== Dependencies
@@ -57,7 +66,7 @@ Gem.path.unshift(Merb.root / "gems")
 # dependency "RedCloth", "> 3.0"
 # OR
 # dependencies "RedCloth" => "> 3.0", "ruby-aes-cext" => "= 1.0"
-dependencies "merb-haml", 'merb-assets', 'merb_helpers'
+dependencies "merb-haml", 'merb-assets', 'merb_helpers', 'dm-validations' => "= 0.9.1"
 Merb::BootLoader.after_app_loads do
   # Add dependencies here that must load after the application loads:
 
@@ -65,15 +74,6 @@ Merb::BootLoader.after_app_loads do
   DataObjects::Sqlite3.logger = DataObjects::Logger.new(STDOUT, :debug) 
 end
 
-#
-# ==== Set up your ORM of choice
-#
-
-# Merb doesn't come with database support by default.  You need
-# an ORM plugin.  Install one, and uncomment one of the following lines,
-# if you need a database.
-
-use_orm :datamapper
 
 
 #

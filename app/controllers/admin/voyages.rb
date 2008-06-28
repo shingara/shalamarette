@@ -12,8 +12,12 @@ class Voyages < Application
   end
 
   def create
-    Voyage.create params[:voyage]
-    redirect url(:action => 'index')
+    @voyage = Voyage.new(params[:voyage])
+    if @voyage.save
+      redirect url(:action => 'index')
+    else
+      render :new
+    end
   end
 end
 end # Admin

@@ -1,5 +1,8 @@
 %h1 Création d'un voyage
 
+= error_messages_for(@voyage) do |error|
+  Impossible de créer le Voyage a cause des erreurs suivantes :
+
 - form_for @voyage, :action => url(:admin_voyage) do |v|
   =text_control :title, :label => 'Titre :'
   %br
