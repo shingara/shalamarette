@@ -19,5 +19,11 @@ class Voyages < Application
       render :new
     end
   end
+
+  def show
+    @voyage = Voyage.get(params[:id])
+    display @voyage
+  end
+
 end
 end # Admin
