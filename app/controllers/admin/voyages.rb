@@ -30,5 +30,17 @@ class Voyages < Application
     redirect url(:admin_voyages)
   end
 
+
+  def edit
+    @voyage = Voyage.get(params[:id])
+    display @voyage
+  end
+
+  def update
+    @voyage = Voyage.get(params[:id])
+    @voyage.update_attributes(params[:voyage])
+    redirect url(:admin_voyage)
+  end
+
 end
 end # Admin

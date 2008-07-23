@@ -1,0 +1,12 @@
+%h1 Modification d'un voyage
+
+= error_messages_for :voyage do |error|
+  = "Impossible de modifier le Voyage a cause des erreurs suivantes"
+
+- form_for @voyage, :action => url(:admin_voyage, @voyage) do |v|
+  =text_control :title, :label => 'Titre :'
+  %br
+  =submit_button 'Modifier'
+
+%p
+  = link_to 'retour a la liste des voyages', url(:admin_voyages)
