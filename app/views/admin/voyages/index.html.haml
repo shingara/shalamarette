@@ -10,6 +10,7 @@
     - @voyages.each do |voyage|
       %tr
         %td= voyage.title
-        %td= link_to 'Show', url(:admin_voyage, voyage)
+        %td= link_to 'Voir', url(:admin_voyage, voyage)
+        %td= link_to 'Supprimer', url(:delete_admin_voyage, voyage)
 
 = link_to('ajouter un voyage', url(:new_admin_voyage))

@@ -25,5 +25,10 @@ class Voyages < Application
     display @voyage
   end
 
+  def delete
+    Voyage.get(params[:id]).destroy
+    redirect url(:admin_voyages)
+  end
+
 end
 end # Admin
