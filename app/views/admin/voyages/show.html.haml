@@ -1,4 +1,6 @@
 %h1= @voyage.title
 
+= link_to 'Ajouter une journée à ce voyage', url(:admin_voyage_jours, :voyage_id => @voyage)
+
 %p
   = link_to 'retour a la liste des voyages', url(:admin_voyages)

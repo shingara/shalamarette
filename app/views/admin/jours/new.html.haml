@@ -1,0 +1,13 @@
+%h1= "Création d'une journée pour le voyage #{@voyage.title}"
+
+= error_messages_for :jour do |error|
+  = "Impossible de créer le jour a cause des erreurs suivantes"
+
+- form_for @jour, :action => url(:admin_voyage_jour, :voyage_id => @voyage) do |v|
+  =text_control :title, :label => 'Titre :'
+  =text_control :body, :label => 'Contenu :'
+  %br
+  =submit_button 'Create'
+
+%p
+  = link_to 'retour a la liste des jours du voyage', url(:admin_voyage_jour, :voyage_id => @voyage)

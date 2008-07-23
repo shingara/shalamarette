@@ -1,0 +1,19 @@
+%h1= "Liste des jours du voyages #{@voyage.title}"
+
+- if @voyage.jours.empty?
+  %p Il n'y a pas de jours enregistrés pour ce voyage actuellement
+
+- else
+  %table
+    %tr
+      %td Ordre
+      %td Titre
+    - @voyage.jours.each do |jour|
+      %tr
+        %td= jour.order
+        %td= jour.title
+        %td= link_to 'Voir', url(:admin_voyage_jour, :voyage_id => @voyage, :id => jour)
+        %td= link_to 'Modifier', url(:edit_admin_voyage_jour, :voyage_id => @voyage, :id => jour)
+        %td= link_to 'Supprimer', url(:delete_admin_voyage_jour, :voyage_id => @voyage, :id => jour)
+
+= link_to('ajouter une journée', url(:new_admin_voyage_jour, :voyage_id => @voyage))

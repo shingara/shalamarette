@@ -30,7 +30,9 @@ Merb::Router.prepare do |r|
   r.match('/admin').to(:controller => 'admin/voyages', :action => 'index')
 
   r.match('/admin').to(:namespace => 'admin') do |admin|
-    admin.resources :voyages
+    admin.resources :voyages do |voyage|
+      voyage.resources :jours
+    end
   end
   
   # This is the default route for /:controller/:action/:id
