@@ -15,7 +15,7 @@ class Admin::Jours < Application
     @jour = Jour.new(params[:jour])
     if @jour.save
       @voyage.jours << @jour
-      redirect url(admin_voyage_jours, :voyage_id => @voyage)
+      redirect url(:admin_voyage_jours, :voyage_id => @voyage)
     else
       render :new
     end

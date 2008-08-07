@@ -66,7 +66,12 @@ use_orm :datamapper
 # dependency "RedCloth", "> 3.0"
 # OR
 # dependencies "RedCloth" => "> 3.0", "ruby-aes-cext" => "= 1.0"
-dependencies "merb-haml", 'merb-assets', 'merb_helpers', 'dm-validations' => "= 0.9.1"
+dependency 'dm-validations', "0.9.3"
+dependency "dm-core", '0.9.3'
+dependency "merb_helpers", "0.9.3"
+dependency "merb-assets", "0.9.3"
+dependency "merb-haml", "0.9.3"
+
 Merb::BootLoader.after_app_loads do
   # Add dependencies here that must load after the application loads:
 
