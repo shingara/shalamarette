@@ -13,8 +13,8 @@ class Admin::Jours < Application
 
   def create
     @jour = Jour.new(params[:jour])
+    @jour.voyage = @voyage
     if @jour.save
-      @voyage.jours << @jour
       redirect url(:admin_voyage_jours, :voyage_id => @voyage)
     else
       render :new
