@@ -1,0 +1,6 @@
+%h1= "#{@jour.title} sur le voyage : #{@voyage.title}"
+
+%p= @jour.body
+
+%p
+  = link_to 'retour a la liste des jours du voyage', url(:admin_voyage_jours, :voyage_id => @voyage)

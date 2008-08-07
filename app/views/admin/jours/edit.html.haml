@@ -1,0 +1,13 @@
+%h1= "Mise à jour de la journée #{@jour.title} pour le voyage #{@voyage.title}"
+
+= error_messages_for :jour do |error|
+  = "Impossible de mettre à jour le jour à cause des erreurs suivantes"
+
+- form_for @jour, :action => url(:admin_voyage_jour, :voyage_id => @voyage, :id => @jour) do |v|
+  =text_control :title, :label => 'Titre :'
+  =text_control :body, :label => 'Contenu :'
+  %br
+  =submit_button 'Mise à jour'
+
+%p
+  = link_to 'retour a la liste des jours du voyage', url(:admin_voyage_jour, :voyage_id => @voyage)

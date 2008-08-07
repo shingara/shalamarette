@@ -21,6 +21,28 @@ class Admin::Jours < Application
     end
   end
 
+  def show
+    @jour = Jour.get(params[:id])
+    display @jour
+  end 
+
+  def delete
+    @jour = Jour.get(params[:id])
+    @jour.destroy
+    redirect url(:admin_voyage_jours, :voyage_id => @voyage)
+  end
+
+  def edit
+    @jour = Jour.get(params[:id])
+    display @jour
+  end
+
+  def update
+    @jour = Jour.get(params[:id])
+    @jour.update_attributes(params[:jour])
+    redirect url(:admin_voyage_jours, :voyage_id => @voyage)
+  end
+
 
   private
 
